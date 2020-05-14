@@ -1,5 +1,5 @@
 
-const btn = document.querySelector('#submit')
+const btn = document.querySelector('#submit');
 btn.addEventListener('click', submitForm);
 function submitForm() {
     if (navigator.geolocation) {
@@ -7,13 +7,15 @@ function submitForm() {
         navigator.geolocation.getCurrentPosition(async position => {
             const latitude = document.querySelector('#latitude');
             const longitude = document.querySelector('#longitude');
+            const input = document.querySelector('#mood');
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
+            const mood = input.value
             latitude.textContent = (lat);
             longitude.textContent = (lon);
 
 
-            const data = { lat, lon };
+            const data = { lat, lon, mood };
             const options = {
                 method: 'POST',
                 headers: {
