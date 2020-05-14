@@ -9,16 +9,20 @@ const database = new Datastore('database.db');
 database.loadDatabase();
 
 app.post('/api', (request, response) => {
-    console.log('I got a request')
     const data = request.body;
     const timestamp = Date.now();
     data.timestamp = timestamp;
     database.insert(data)
-    response.json({
-        status: 'success',
-        timestamp: timestamp,
-        mood: data.mood,
-        latitude: data.lat,
-        longitude: data.lon
-    });
+    response.json(data);
+})
+
+app.get('/api', (request, response) => {
+    database.find({}, (err, data) => {
+        if (err) {
+            response.end();
+            return
+        }
+        response.json(data);
+    })
+
 })
