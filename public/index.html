@@ -9,12 +9,20 @@
 
 <body>
     <h1>Data selfie app</h1>
-    <p>latitude: <span id="latitude"></span><br>
-        longitude: <span id="longitude"></span>
+    <div class="link-wrap">
+        <a href="index.html">Home</a>
+        <a href="all.html">List</a>
+    </div>
+    <p>latitude: <span id="latitude">&deg;</span><br>
+        longitude: <span id="longitude">&deg;</span>
     </p>
     <input type="text" id="mood" placeholder="Enter mood...">
     <button type="submit" id="submit">Submit</button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"
+        integrity="sha256-a6uP+lfJTznPH4/eUqQFX3/sULwjHbfGtUjy8CWPooI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"
+        integrity="sha256-Pg1di+fBF53Rbh9oZR/FeD1xsFzTLC963lcac1D0ias=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 
