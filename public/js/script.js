@@ -1,6 +1,7 @@
+
 if (navigator.geolocation) {
     console.log('Geolocation is supported by this browser.')
-    navigator.geolocation.getCurrentPosition(position => {
+    navigator.geolocation.getCurrentPosition(async position => {
         const latitude = document.querySelector('#latitude');
         const longitude = document.querySelector('#longitude');
         const lat = position.coords.latitude;
@@ -17,10 +18,9 @@ if (navigator.geolocation) {
             },
             body: JSON.stringify(data),
         }
-        console.log(options);
-        console.log(data)
-        fetch('/api', options);
-
+        const response = await fetch('/api', options);
+        const json = await response.json();
+        console.log(json);
     });
 
 } else {
