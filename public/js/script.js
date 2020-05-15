@@ -18,8 +18,6 @@ function setup() {
                 const image64 = video.canvas.toDataURL();
                 latitude.textContent = `${lat}°`;
                 longitude.textContent = `${lon}°`;
-
-
                 const data = { lat, lon, mood, image64 };
                 const options = {
                     method: 'POST',
@@ -30,9 +28,7 @@ function setup() {
                 }
                 const response = await fetch('/api', options);
                 const json = await response.json();
-                console.log(json);
             });
-
         } else {
             console.log = "Geolocation is not supported by this browser.";
         }
