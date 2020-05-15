@@ -7,14 +7,14 @@ async function getData() {
         const { lat, lon, mood, timestamp, image64 } = item
         const div = document.createElement('div');
         const latitude = document.createElement('p');
-        latitude.innerText = `Latitude: ${lat}°`
+        latitude.innerText = `Широта: ${lat}°`
         const longitude = document.createElement('p')
-        longitude.innerText = `Longitude: ${lon}°`
+        longitude.innerText = `Долгота: ${lon}°`
         const userMood = document.createElement('p')
-        userMood.innerText = `Mood: ${mood}`;
+        userMood.innerText = `Настроение: ${mood}`;
         const date = document.createElement('p');
         const dateString = new Date(timestamp).toLocaleString();
-        date.innerText = `Date/time: ${dateString}`;
+        date.innerText = `Дата | время: ${dateString}`;
         const img = document.createElement('img');
         img.src = image64
         div.append(latitude, longitude, userMood, date, img)

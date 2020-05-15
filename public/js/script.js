@@ -1,7 +1,7 @@
 function setup() {
     noCanvas();
     const video = createCapture(VIDEO)
-    video.size(320, 240)
+    video.parent('video')
     const btn = document.querySelector('#submit');
     btn.addEventListener('click', submitForm);
     function submitForm() {
